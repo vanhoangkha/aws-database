@@ -17,7 +17,7 @@
   - Đơn hàng: 1 tỷ đơn hàng/năm với trạng thái, thanh toán, vận chuyển
   - Inventory: Real-time stock tracking cho 10,000 warehouses
 
-- **Ngân hàng (Vietcombank)**:
+- **Ngân hàng**:
   - Tài khoản: 15 triệu tài khoản với số dư, loại tài khoản
   - Giao dịch: 500 triệu giao dịch/tháng (chuyển khoản, rút tiền, nạp tiền)
   - Khách hàng: thông tin cá nhân, CMND, địa chỉ, mức tín dụng
