@@ -1,4 +1,4 @@
-# 🗄️ AWS Database Concepts - Complete Guide
+# AWS Database Concepts - Complete Guide
 
 [![GitHub Stars](https://img.shields.io/github/stars/vanhoangkha/aws-database?style=for-the-badge&logo=github)](https://github.com/vanhoangkha/aws-database)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
@@ -7,20 +7,20 @@
 
 > **Hướng dẫn toàn diện về 65 khái niệm cơ sở dữ liệu với triển khai thực tế trên AWS, ví dụ code chi tiết và các use case thực tế.**
 
-## 📋 Mục Lục
+## Mục Lục
 
-- [🎯 Tổng Quan](#-tổng-quan)
-- [📚 Nội Dung](#-nội-dung)
-- [🚀 Bắt Đầu Nhanh](#-bắt-đầu-nhanh)
-- [📖 Cấu Trúc Tài Liệu](#-cấu-trúc-tài-liệu)
-- [💡 Tính Năng Chính](#-tính-năng-chính)
-- [🛠️ Công Nghệ](#️-công-nghệ)
-- [📊 AWS Services](#-aws-services)
-- [🔧 Ví Dụ Sử Dụng](#-ví-dụ-sử-dụng)
-- [🎯 Lộ Trình Học](#-lộ-trình-học)
-- [🤝 Đóng Góp](#-đóng-góp)
+- [Tổng Quan](#tổng-quan)
+- [Nội Dung](#nội-dung)
+- [Bắt Đầu Nhanh](#bắt-đầu-nhanh)
+- [Cấu Trúc Tài Liệu](#cấu-trúc-tài-liệu)
+- [Tính Năng Chính](#tính-năng-chính)
+- [Công Nghệ](#công-nghệ)
+- [AWS Services](#aws-services)
+- [Ví Dụ Sử Dụng](#ví-dụ-sử-dụng)
+- [Lộ Trình Học](#lộ-trình-học)
+- [Đóng Góp](#đóng-góp)
 
-## 🎯 Tổng Quan
+## Tổng Quan
 
 Repository này chứa **hướng dẫn toàn diện về các khái niệm cơ sở dữ liệu** được thiết kế cho developers, database administrators và cloud architects làm việc với AWS database services. Bao gồm từ các khái niệm cơ bản đến các patterns enterprise nâng cao với triển khai thực tế.
 
@@ -33,16 +33,16 @@ Repository này chứa **hướng dẫn toàn diện về các khái niệm cơ 
 
 **Mục tiêu chính**: Cho phép nhiều users/applications lưu trữ, tìm kiếm, chỉnh sửa và quản lý dữ liệu đồng thời một cách hiệu quả và an toàn.
 
-### 🏛️ Ví Dụ Database - Giống Như Thư Viện:
-- 📚 **Sách** = Dữ liệu
-- 📇 **Danh mục** = Index  
-- 🏷️ **Mã sách** = Primary Key
-- 🔗 **Tham khảo** = Foreign Key
-- 👤 **Người mượn** = Session
+### Ví Dụ Database - Giống Như Thư Viện:
+- **Sách** = Dữ liệu
+- **Danh mục** = Index
+- **Mã sách** = Primary Key
+- **Tham khảo** = Foreign Key
+- **Người mượn** = Session
 
-## 📚 Nội Dung
+## Nội Dung
 
-### 🎓 65 Khái Niệm Database Hoàn Chỉnh
+### 65 Khái Niệm Database Hoàn Chỉnh
 
 #### **Khái Niệm Cơ Bản (1-15)**
 - Database fundamentals và DBMS architecture
@@ -72,14 +72,14 @@ Repository này chứa **hướng dẫn toàn diện về các khái niệm cơ 
 - Vector databases và AI integration
 - Cloud-native database strategies
 
-### 📋 Tài Liệu AWS Services
+### Tài Liệu AWS Services
 - **Amazon Aurora**: Phân tích sâu
 - **Amazon DynamoDB**: NoSQL data modeling
 - **Amazon ElastiCache**: Redis implementation
 - **Amazon RDS**: PostgreSQL và RDS features
 - **NoSQL Best Practices**: Data modeling guidelines
 
-## 🚀 Bắt Đầu Nhanh
+## Bắt Đầu Nhanh
 
 ### Yêu Cầu
 - Hiểu biết cơ bản về databases
@@ -100,7 +100,7 @@ cd aws-database
 # Xem PDF_SUMMARY.md cho tổng quan AWS services
 ```
 
-## 📖 Cấu Trúc Tài Liệu
+## Cấu Trúc Tài Liệu
 
 ```
 aws-database/
@@ -117,29 +117,29 @@ aws-database/
 └── *.pdf                              # Tài liệu AWS gốc
 ```
 
-## 💡 Tính Năng Chính
+## Tính Năng Chính
 
-### ✅ **Bao Phủ Toàn Diện**
+### **Bao Phủ Toàn Diện**
 - **65 khái niệm database** từ cơ bản đến nâng cao
 - **Use cases thực tế** từ banking, e-commerce, healthcare
 - **Code examples hoàn chỉnh** bằng SQL, Python, configurations
 
-### ✅ **Tích Hợp AWS**
+### **Tích Hợp AWS**
 - **Mapping cụ thể AWS services** cho từng khái niệm
 - **Ví dụ production-ready** với AWS best practices
 - **Chiến lược tối ưu cost** và performance tuning
 
-### ✅ **Triển Khai Thực Tế**
+### **Triển Khai Thực Tế**
 - **Code samples hoạt động** có thể chạy ngay
 - **Tutorials từng bước** với giải thích chi tiết
 - **Hướng dẫn troubleshooting** cho các vấn đề thường gặp
 
-### ✅ **Hỗ Trợ Đa Ngôn Ngữ**
+### **Hỗ Trợ Đa Ngôn Ngữ**
 - **Giải thích tiếng Việt** cho các khái niệm cốt lõi
 - **Tài liệu kỹ thuật tiếng Anh** cho cộng đồng quốc tế
 - **Comments code song ngữ** để hiểu rõ hơn
 
-## 🛠️ Công Nghệ
+## Công Nghệ
 
 ### **Database Systems**
 - **Relational**: MySQL, PostgreSQL, Oracle, SQL Server
@@ -155,7 +155,7 @@ aws-database/
 - **Integration**: DMS, Glue, Kinesis, Lambda
 - **AI/ML**: SageMaker, Bedrock, Comprehend
 
-## 📊 AWS Services
+## AWS Services
 
 | Use Case | Primary Service | Secondary Services | Phù Hợp Cho |
 |----------|----------------|-------------------|-------------|
@@ -166,7 +166,7 @@ aws-database/
 | **Real-time Processing** | Kinesis | Lambda, EMR | Streaming data, events |
 | **AI/ML Workloads** | SageMaker | Bedrock, OpenSearch | Machine learning, search |
 
-## 🔧 Ví Dụ Sử Dụng
+## Ví Dụ Sử Dụng
 
 ### Ví Dụ 1: Thiết Kế Database E-commerce
 ```sql
@@ -258,7 +258,7 @@ def get_product_with_cache(product_id):
     return product
 ```
 
-## 🎯 Lộ Trình Học
+## Lộ Trình Học
 
 ### **Người Mới Bắt Đầu (Khái niệm 1-20)**
 1. Bắt đầu với database fundamentals
@@ -278,7 +278,7 @@ def get_product_with_cache(product_id):
 3. Tích hợp AI/ML capabilities
 4. Thành thạo cloud-native database patterns
 
-## 🔍 Use Cases Theo Ngành
+## Use Cases Theo Ngành
 
 ### **E-commerce**
 - **Quản lý khách hàng**: User profiles, authentication, preferences
@@ -298,7 +298,7 @@ def get_product_with_cache(product_id):
 - **Nghiên cứu lâm sàng**: Data collection, analysis, reporting
 - **Compliance**: HIPAA compliance, audit logging
 
-## 🚀 Bắt Đầu Với AWS
+## Bắt Đầu Với AWS
 
 ### **1. Thiết Lập AWS Account**
 ```bash
@@ -345,7 +345,7 @@ table = dynamodb.create_table(
 )
 ```
 
-## 🤝 Đóng Góp
+## Đóng Góp
 
 Chúng tôi hoan nghênh các đóng góp để cải thiện hướng dẫn database concepts này!
 
@@ -364,7 +364,7 @@ Chúng tôi hoan nghênh các đóng góp để cải thiện hướng dẫn dat
 - **Thêm AWS integration**: Chỉ ra cách concepts áp dụng cho AWS services
 - **Cập nhật documentation**: Giữ README và indexes current
 
-## 📈 Performance Benchmarks
+## Performance Benchmarks
 
 | Database Type | Use Case | Latency | Throughput | Scalability |
 |---------------|----------|---------|------------|-------------|
@@ -373,18 +373,18 @@ Chúng tôi hoan nghênh các đóng góp để cải thiện hướng dẫn dat
 | **ElastiCache** | Caching | <1ms | 10M+ OPS | Horizontal Clustering |
 | **Redshift** | OLAP | 100ms-10s | Complex Queries | Petabyte Scale |
 
-## 🔒 Security Best Practices
+## Security Best Practices
 
 ### **Database Security Checklist**
-- ✅ **Encryption at rest** và in transit
-- ✅ **Strong authentication** với MFA
-- ✅ **Network isolation** với VPC và security groups
-- ✅ **Regular backups** và disaster recovery testing
-- ✅ **Access logging** và monitoring
-- ✅ **Principle of least privilege** cho user access
-- ✅ **Regular security updates** và patches
+- **Encryption at rest** và in transit
+- **Strong authentication** với MFA
+- **Network isolation** với VPC và security groups
+- **Regular backups** và disaster recovery testing
+- **Access logging** và monitoring
+- **Principle of least privilege** cho user access
+- **Regular security updates** và patches
 
-## 📚 Tài Nguyên Bổ Sung
+## Tài Nguyên Bổ Sung
 
 ### **Tài Liệu AWS Chính Thức**
 - [AWS Database Services](https://aws.amazon.com/products/databases/)
@@ -397,18 +397,18 @@ Chúng tôi hoan nghênh các đóng góp để cải thiện hướng dẫn dat
 - [AWS Well-Architected Framework](https://aws.amazon.com/architecture/well-architected/)
 - [Database Design Patterns](https://aws.amazon.com/builders-library/)
 
-## 📜 License
+## License
 
 Dự án này được cấp phép theo MIT License - xem file [LICENSE](LICENSE) để biết chi tiết.
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - **AWS Documentation Team** cho tài liệu services toàn diện
 - **Database community** cho best practices và patterns
 - **Open source contributors** cho tools và libraries được sử dụng
 - **Vietnamese tech community** cho feedback và suggestions
 
-## 📞 Liên Hệ
+## Liên Hệ
 
 - **GitHub**: [@vanhoangkha](https://github.com/vanhoangkha)
 - **Repository**: [aws-database](https://github.com/vanhoangkha/aws-database)
@@ -416,6 +416,6 @@ Dự án này được cấp phép theo MIT License - xem file [LICENSE](LICENSE
 
 ---
 
-⭐ **Nếu bạn thấy hướng dẫn này hữu ích, hãy cho một star!** ⭐
+**Nếu bạn thấy hướng dẫn này hữu ích, hãy cho một star!**
 
-**Chúc bạn học tập và xây dựng thành công với AWS databases!** 🚀
+**Chúc bạn học tập và xây dựng thành công với AWS databases!**
