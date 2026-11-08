@@ -714,19 +714,19 @@ class DistributedSocialMedia:
         
     def simulate_network_partition(self, dc1: str, dc2: str):
         """Simulate network partition between data centers"""
-        print(f"🔥 Network partition between {dc1} and {dc2}")
+        print(f"Network partition between {dc1} and {dc2}")
         self.data_centers[dc1]['partitioned_from'] = dc2
         self.data_centers[dc2]['partitioned_from'] = dc1
     
     def heal_partition(self, dc1: str, dc2: str):
         """Heal network partition"""
-        print(f"✅ Network partition healed between {dc1} and {dc2}")
+        print(f"Network partition healed between {dc1} and {dc2}")
         self.data_centers[dc1].pop('partitioned_from', None)
         self.data_centers[dc2].pop('partitioned_from', None)
     
     def write_post_cp_system(self, post: Post, primary_dc: str) -> bool:
         """CP System: Prioritize Consistency + Partition tolerance"""
-        print(f"\n📝 CP System: Writing post {post.post_id} to {primary_dc}")
+        print(f"\nCP System: Writing post {post.post_id} to {primary_dc}")
         
         # Check if we can reach majority of nodes
         healthy_dcs = [dc for dc, info in self.data_centers.items() 
@@ -734,7 +734,7 @@ class DistributedSocialMedia:
                       'partitioned_from' not in info]
         
         if len(healthy_dcs) < len(self.data_centers) // 2 + 1:
-            print("❌ Cannot achieve majority consensus - Write REJECTED")
+            print("Cannot achieve majority consensus - Write REJECTED")
             return False
         
         # Write to majority of nodes synchronously
@@ -744,15 +744,15 @@ class DistributedSocialMedia:
                 time.sleep(self.data_centers[dc]['latency'])  # Simulate network latency
                 self.data_centers[dc]['posts'][post.post_id] = post
                 successful_writes += 1
-                print(f"✅ Written to {dc}")
+                print(f"Written to {dc}")
             except Exception as e:
-                print(f"❌ Failed to write to {dc}: {e}")
+                print(f"Failed to write to {dc}: {e}")
         
         if successful_writes >= 2:  # Majority achieved
-            print(f"✅ Post written successfully to {successful_writes} nodes")
+            print(f"Post written successfully to {successful_writes} nodes")
             return True
         else:
-            print("❌ Failed to achieve majority - Rolling back")
+            print("Failed to achieve majority - Rolling back")
             # Rollback writes
             for dc in healthy_dcs:
                 self.data_centers[dc]['posts'].pop(post.post_id, None)
@@ -760,7 +760,7 @@ class DistributedSocialMedia:
     
     def write_post_ap_system(self, post: Post, preferred_dc: str) -> bool:
         """AP System: Prioritize Availability + Partition tolerance"""
-        print(f"\n📝 AP System: Writing post {post.post_id} to {preferred_dc}")
+        print(f"\nAP System: Writing post {post.post_id} to {preferred_dc}")
         
         # Always accept writes to available nodes
         written_dcs = []
@@ -771,22 +771,22 @@ class DistributedSocialMedia:
                     # Write immediately to available nodes
                     self.data_centers[dc]['posts'][post.post_id] = post
                     written_dcs.append(dc)
-                    print(f"✅ Written to {dc}")
+                    print(f"Written to {dc}")
                 except Exception as e:
-                    print(f"❌ Failed to write to {dc}: {e}")
+                    print(f"Failed to write to {dc}: {e}")
         
         if written_dcs:
-            print(f"✅ Post written to {len(written_dcs)} available nodes")
+            print(f"Post written to {len(written_dcs)} available nodes")
             # Asynchronous replication will eventually sync
             self.schedule_async_replication(post, written_dcs)
             return True
         else:
-            print("❌ No nodes available")
+            print("No nodes available")
             return False
     
     def read_post_strong_consistency(self, post_id: str, reader_dc: str) -> Optional[Post]:
         """Strong consistency read - must read from majority"""
-        print(f"\n📖 Strong consistency read: {post_id} from {reader_dc}")
+        print(f"\nStrong consistency read: {post_id} from {reader_dc}")
         
         # Read from majority of nodes to ensure latest version
         versions = {}
@@ -799,21 +799,21 @@ class DistributedSocialMedia:
         if len(versions) >= 2:  # Majority has the data
             # Return latest version
             latest_post = max(versions.values(), key=lambda p: p.version)
-            print(f"✅ Read latest version (v{latest_post.version}) from majority")
+            print(f"Read latest version (v{latest_post.version}) from majority")
             return latest_post
         else:
-            print("❌ Cannot read from majority - Data may be inconsistent")
+            print("Cannot read from majority - Data may be inconsistent")
             return None
     
     def read_post_eventual_consistency(self, post_id: str, reader_dc: str) -> Optional[Post]:
         """Eventual consistency read - read from nearest available node"""
-        print(f"\n📖 Eventual consistency read: {post_id} from {reader_dc}")
+        print(f"\nEventual consistency read: {post_id} from {reader_dc}")
         
         # Try to read from nearest DC first
         if (self.data_centers[reader_dc]['status'] == 'healthy' and 
             post_id in self.data_centers[reader_dc]['posts']):
             post = self.data_centers[reader_dc]['posts'][post_id]
-            print(f"✅ Read from local DC {reader_dc} (v{post.version})")
+            print(f"Read from local DC {reader_dc} (v{post.version})")
             return post
         
         # Fallback to any available DC
@@ -821,15 +821,15 @@ class DistributedSocialMedia:
             if (info['status'] == 'healthy' and 
                 post_id in info['posts']):
                 post = info['posts'][post_id]
-                print(f"✅ Read from fallback DC {dc} (v{post.version}) - may be stale")
+                print(f"Read from fallback DC {dc} (v{post.version}) - may be stale")
                 return post
         
-        print("❌ Post not found in any available DC")
+        print("Post not found in any available DC")
         return None
     
     def schedule_async_replication(self, post: Post, source_dcs: List[str]):
         """Simulate asynchronous replication for AP systems"""
-        print(f"🔄 Scheduling async replication for post {post.post_id}")
+        print(f"Scheduling async replication for post {post.post_id}")
         
         # In real system, this would be handled by background processes
         time.sleep(self.replication_lag)
@@ -839,10 +839,10 @@ class DistributedSocialMedia:
                 # Check for conflicts and resolve
                 existing_post = self.data_centers[dc]['posts'].get(post.post_id)
                 if existing_post and existing_post.version > post.version:
-                    print(f"⚠️  Conflict detected in {dc} - keeping newer version")
+                    print(f"Conflict detected in {dc} - keeping newer version")
                 else:
                     self.data_centers[dc]['posts'][post.post_id] = post
-                    print(f"🔄 Replicated to {dc}")
+                    print(f"Replicated to {dc}")
     
     def demonstrate_cap_scenarios(self):
         """Demonstrate different CAP theorem scenarios"""
@@ -860,7 +860,7 @@ class DistributedSocialMedia:
         print("=" * 60)
         
         # Scenario 1: Normal operation (all properties work)
-        print("\n🟢 SCENARIO 1: Normal Operation")
+        print("\nSCENARIO 1: Normal Operation")
         print("All data centers healthy, no network issues")
         
         success = self.write_post_cp_system(post, 'us-east')
@@ -868,7 +868,7 @@ class DistributedSocialMedia:
             read_post = self.read_post_strong_consistency('post_123', 'europe')
         
         # Scenario 2: Network partition (CP choice)
-        print("\n🟡 SCENARIO 2: Network Partition - CP System Choice")
+        print("\nSCENARIO 2: Network Partition - CP System Choice")
         self.simulate_network_partition('us-east', 'europe')
         
         # CP system will reject writes if can't achieve majority
@@ -876,7 +876,7 @@ class DistributedSocialMedia:
         success = self.write_post_cp_system(post2, 'us-east')
         
         # Scenario 3: Network partition (AP choice)  
-        print("\n🟠 SCENARIO 3: Network Partition - AP System Choice")
+        print("\nSCENARIO 3: Network Partition - AP System Choice")
         
         # AP system will accept writes even during partition
         post3 = Post("post_789", "user_123", "AP System Test", time.time())
@@ -886,7 +886,7 @@ class DistributedSocialMedia:
         read_post = self.read_post_eventual_consistency('post_789', 'asia')
         
         # Scenario 4: Partition healing
-        print("\n🟢 SCENARIO 4: Partition Healing")
+        print("\nSCENARIO 4: Partition Healing")
         self.heal_partition('us-east', 'europe')
         
         # Now CP system can work normally again
